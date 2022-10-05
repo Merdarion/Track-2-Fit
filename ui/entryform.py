@@ -234,4 +234,4 @@ class Ui_EntryForm(object):
         self.label_14.setText(_translate("EntryForm", "Datum:"))
         self.datumKFA.setDisplayFormat(_translate("EntryForm", "dd.MM.yyyy"))
         self.toolBox.setItemText(self.toolBox.indexOf(self.Koerperfettanteil), _translate("EntryForm", "Körperfettanteil"))
-        self.lustigLol.setText(_translate("EntryForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Escht wird äbs eigetrooche!</span></p></body></html>"))
+        self.lustigLol.setText(_translate("EntryForm", "<html><head/><body><p align=\"center\"><span style=\" font-size:12pt;\">Bitte etwas eintragen</span></p></body></html>"))
