@@ -58,7 +58,7 @@ class MainWindow(QtWidgets.QMainWindow):
         dates = []
         vals = []
 
-        with open("../daten/gewicht.csv", "r") as file:
+        with open("daten/gewicht.csv", "r") as file:
             reader = csv.reader(file, delimiter=",")
             data = list(reader)
 
@@ -98,7 +98,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def read_entries(self):
         # Gewicht
-        with open("../daten/gewicht.csv", "r") as file:
+        with open("daten/gewicht.csv", "r") as file:
             reader = csv.reader(file, delimiter=",")
             data = list(reader)
             row_count = len(data)
@@ -109,7 +109,7 @@ class MainWindow(QtWidgets.QMainWindow):
             gewicht_letzt = ".".join(datum[::-1])
 
         # Umfänge
-        with open("../daten/umfaenge.csv", "r") as file:
+        with open("daten/umfaenge.csv", "r") as file:
             reader = csv.reader(file, delimiter=",")
             data = list(reader)
             row_count = len(data)
@@ -124,7 +124,7 @@ class MainWindow(QtWidgets.QMainWindow):
             umfaenge_letzt = ".".join(datum[::-1])
 
         # Ernährung:
-        with open("../daten/ernaehrung.csv", "r") as file:
+        with open("daten/ernaehrung.csv", "r") as file:
             reader = csv.reader(file, delimiter=",")
             data = list(reader)
             row_count = len(data)
@@ -138,7 +138,7 @@ class MainWindow(QtWidgets.QMainWindow):
             ernaehrung_letzt = ".".join(datum[::-1])
 
         # KFA:
-        with open("../daten/kfa.csv", "r") as file:
+        with open("daten/kfa.csv", "r") as file:
             reader = csv.reader(file, delimiter=",")
             data = list(reader)
             row_count = len(data)
@@ -149,7 +149,7 @@ class MainWindow(QtWidgets.QMainWindow):
             kfa_letzt = ".".join(datum[::-1])
 
         # Trainingsplan:
-        with open("../daten/trainingsplan.txt", "r", encoding="utf-8") as file:
+        with open("daten/trainingsplan.txt", "r", encoding="utf-8") as file:
             self.ui.trainingsplan.setText(file.read())
 
 
@@ -249,7 +249,7 @@ class EntryForm(QtWidgets.QDialog):
                       self.ui.fett.value()]
 
         if self.ui.gewicht.value() != 0.0:
-            with open('../daten/gewicht.csv', 'a', newline='') as file:
+            with open('daten/gewicht.csv', 'a', newline='') as file:
                 write = csv.writer(file, delimiter=",")
 
                 row_content = [
@@ -261,7 +261,7 @@ class EntryForm(QtWidgets.QDialog):
                 self.accept()
 
         elif 0.0 not in umfaenge:
-            with open('../daten/umfaenge.csv', 'a', newline='') as file:
+            with open('daten/umfaenge.csv', 'a', newline='') as file:
                 write = csv.writer(file, delimiter=",")
 
                 row_content = [
@@ -292,7 +292,7 @@ class EntryForm(QtWidgets.QDialog):
                 self.accept()
 
         elif self.ui.kfa.value() != 0.0:
-            with open('../daten/kfa.csv', 'a', newline="") as file:
+            with open('daten/kfa.csv', 'a', newline="") as file:
                 write = csv.writer(file, delimiter=",")
 
                 row_content = [
